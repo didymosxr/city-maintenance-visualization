@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "2020-12",
+    "$id": "https://github.com/didymosxr/city-maintenance-visualization/model/Pothole.json",
+    "title": "Pothole",
+    "description": "Model for a Pothole.",
+    "type": "object",
+    "x-ngsi": {
+        "uri-prefix": "https://github.com/didymosxr/city-maintenance-visualization/model/"
+    },
+    "properties": {
+        "id": { "type": "string"},
+        "type": { "type": "string"},
+        "size": {"type": "number", "format": "float"}
+    },
+    "required": [
+        "id",
+        "type",
+        "size"
+    ]
+
+}
