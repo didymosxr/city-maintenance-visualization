@@ -1,0 +1,9 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "didymosxr": "https://github.com/didymosxr/city-maintenance-visualization/model",
+        "Pothole": "didymosxr:Pothole",
+        "description": "didymosxr:description"
+    }
+}
