@@ -68,3 +68,24 @@ curl -G -X GET \
 -d 'options=keyValues'
 ```
 
+
+A workflow could look like this:
+
+```mermaid
+sequenceDiagram
+
+participant Car as Moving Car with cameras
+participant CB as Context Broker (FF)
+actor User
+
+Note right of Car: Detects a notable occurrence (e.g. Pothole) at current location
+Car->>+CB: Is there any entity of type Pothole near my current location?
+CB->>-Car: List of known entities at given location
+    alt Entity found
+        Car->>CB:  Update size if necessary
+    else No entity found
+        Car->>CB:  Create a new Pothole at the location
+    end
+
+User-->>CB: Visualize entities via Grafana Dashboard and decide on further actions
+```
