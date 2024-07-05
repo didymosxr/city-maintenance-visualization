@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 4,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -224,6 +224,107 @@
       ],
       "title": "Panel Title",
       "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "ngsild-grafana-datasource",
+        "uid": "ngsild_1"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 23
+      },
+      "id": 3,
+      "options": {
+        "buttonGroup": {
+          "orientation": "center",
+          "size": "md"
+        },
+        "confirmModal": {
+          "body": "Please confirm to update changed values",
+          "cancel": "Cancel",
+          "columns": {
+            "include": [
+              "name",
+              "oldValue",
+              "newValue"
+            ],
+            "name": "Label",
+            "newValue": "New Value",
+            "oldValue": "Old Value"
+          },
+          "confirm": "Confirm",
+          "title": "Confirm update request"
+        },
+        "elementValueChanged": "",
+        "elements": [
+          {
+            "hidden": false,
+            "id": "entry",
+            "labelWidth": 10,
+            "section": "",
+            "title": "Entry Id",
+            "tooltip": "",
+            "type": "string",
+            "uid": "06161ded-4470-4055-8a83-53b722e24908",
+            "unit": "",
+            "value": ""
+          }
+        ],
+        "initial": {
+          "code": "console.log(data, response, initial, elements);\n\nreturn;\n\n/**\n * Data Source\n * Requires form elements to be defined\n */\nconst dataQuery = toDataQueryResponse(response);\nconsole.log(dataQuery);",
+          "contentType": "application/json",
+          "getPayload": "return {\n  rawSql: '',\n  format: 'table',\n}",
+          "highlight": false,
+          "highlightColor": "red",
+          "method": "-"
+        },
+        "layout": {
+          "orientation": "horizontal",
+          "padding": 10,
+          "variant": "single"
+        },
+        "reset": {
+          "backgroundColor": "purple",
+          "foregroundColor": "yellow",
+          "icon": "process",
+          "text": "Reset",
+          "variant": "hidden"
+        },
+        "resetAction": {
+          "code": "if (response && response.ok) {\n  notifySuccess(['Update', 'Values updated successfully.']);\n  locationService.reload();\n} else {\n  notifyError(['Update', 'An error occured updating values.']);\n}",
+          "confirm": false,
+          "getPayload": "return {\n  rawSql: '',\n  format: 'table',\n}",
+          "mode": "initial"
+        },
+        "saveDefault": {
+          "icon": "save",
+          "text": "Save Default",
+          "variant": "hidden"
+        },
+        "submit": {
+          "backgroundColor": "purple",
+          "foregroundColor": "yellow",
+          "icon": "cloud-upload",
+          "text": "Submit",
+          "variant": "primary"
+        },
+        "sync": false,
+        "update": {
+          "code": "\nconst body = {};\ncontext.panel.elements.forEach((element) => {\n  body[element.id] = element.value;\n\n});\n\nconst url = `http://localhost:3000/ngsi-ld/v1/entities/${encodeURI(body[\"entry\"])}`;\n\n/**\n* Fetch\n  */\nconst resp = fetch(url, {\n  method: \"DELETE\",\n})\n  .catch((error) => {\n    console.error(error);\n  })\n  .then((resp) => {\n    console.log(resp);\n  });",
+          "confirm": false,
+          "contentType": "application/json",
+          "getPayload": "const payload = {};\n\nelements.forEach((element) => {\n  if (!element.value) {\n    return;\n  }\n\n  payload[element.id] = element.value;\n})\n\nreturn payload;\n\n/**\n * Data Source payload\n */ \nreturn {\n  rawSql: '',\n  format: 'table',\n};",
+          "method": "-",
+          "payloadMode": "all"
+        },
+        "updateEnabled": "auto"
+      },
+      "pluginVersion": "3.8.0",
+      "title": "Remove entry",
+      "type": "volkovlabs-form-panel"
     }
   ],
   "schemaVersion": 39,
@@ -239,6 +340,6 @@
   "timezone": "browser",
   "title": "Vilanova",
   "uid": "fdiwvyt8ct98ga",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
