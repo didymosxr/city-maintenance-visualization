@@ -121,14 +121,28 @@ services:
       - context
     #healthcheck:
     #  test: (wget --server-response --spider --quiet  http://ld-context/ngsi-context.jsonld 2>&1 | awk 'NR==1{print $$2}'|  grep -q -e "200") || exit 1
-     
+
+  nginx:
+    image: nginx:1.23.0-alpine
+    container_name: nginx_container
+    ports:
+      - 3000:80
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - orion
+      - fiware-grafana
+    depends_on:
+      - fiware-grafana
+      - orion
+
   fiware-grafana:
     image: grafana/grafana:latest
     container_name: fiware-grafana
-    ports:
-        - "3000:3000"
+#    ports:
+#      - "3000:3000"
     volumes:
-        - ./grafana/plugin/ngsild-grafana-datasource:/var/lib/grafana/plugins/ngsild-grafana-datasource:ro
+        - ./grafana/plugin:/var/lib/grafana/plugins:ro
         - ./grafana/datasource:/etc/grafana/provisioning/datasources:ro
         - ./grafana/dashboard_provisioning:/etc/grafana/provisioning/dashboards:ro
         - ./grafana/dashboard:/var/lib/grafana/dashboards:ro
@@ -136,7 +150,7 @@ services:
         - GF_PATHS_PLUGINS=/var/lib/grafana/plugins
         # dev setting: allow unsigned plugins; comma separated list of plugins
         - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=ngsild-grafana-datasource
-        # dev settings => disable authentication
+      # dev settings => disable authentication
         - GF_AUTH_ANONYMOUS_ENABLED=true
         - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
         - GF_SERVER_DOMAIN=localhost
@@ -153,6 +167,7 @@ services:
         - orion
         - mintaka
         #- context
+        - fiware-grafana
     depends_on:
         - orion
         - mintaka
@@ -178,7 +193,8 @@ networks:
   context:
   orion:
   mintaka:
-  
+  fiware-grafana:
+
 volumes:
   fiware-timescale:
   fiware-mongo-config:
