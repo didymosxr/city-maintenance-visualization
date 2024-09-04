@@ -52,7 +52,7 @@ services:
       retries: 5
 
   orion:
-    image: fiware/orion-ld
+    image: quay.io/pulledtim/test:latest
     container_name: orionld
     restart: always
     environment:

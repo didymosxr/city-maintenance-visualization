@@ -1,11 +1,11 @@
 [
   {
-    "id": "urn:ngsi-ld:pothole:somepothole",
+    "id": "urn:ngsi-ld:pothole:pothole000",
     "type": "Pothole",
     "size": 0.1,
     "description": {
       "type": "Property",
-      "value": "Some detected pothole"
+      "value": "Detected pothole 000"
     },
     "location": {
       "type": "GeoProperty",
@@ -14,6 +14,386 @@
         "coordinates": [
           1.7334140332199022,
           41.22301170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole001",
+    "type": "Pothole",
+    "size": 0.2,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 001"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7335140332199022,
+          41.22311170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole002",
+    "type": "Pothole",
+    "size": 0.15,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 002"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7336140332199023,
+          41.22321170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole003",
+    "type": "Pothole",
+    "size": 0.12,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 003"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7337140332199024,
+          41.22331170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole004",
+    "type": "Pothole",
+    "size": 0.18,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 004"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7338140332199025,
+          41.22341170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole005",
+    "type": "Pothole",
+    "size": 0.25,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 005"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7339140332199026,
+          41.22351170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole006",
+    "type": "Pothole",
+    "size": 0.22,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 006"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7340140332199027,
+          41.22361170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole007",
+    "type": "Pothole",
+    "size": 0.3,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 007"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7341140332199028,
+          41.22371170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole008",
+    "type": "Pothole",
+    "size": 0.11,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 008"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7342140332199029,
+          41.22381170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole009",
+    "type": "Pothole",
+    "size": 0.14,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 009"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.734314033219903,
+          41.22391170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole010",
+    "type": "Pothole",
+    "size": 0.2,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 010"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7344140332199031,
+          41.22401170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole011",
+    "type": "Pothole",
+    "size": 0.13,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 011"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7345140332199032,
+          41.22411170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole012",
+    "type": "Pothole",
+    "size": 0.19,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 012"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7346140332199033,
+          41.22421170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole013",
+    "type": "Pothole",
+    "size": 0.21,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 013"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7347140332199034,
+          41.22431170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole014",
+    "type": "Pothole",
+    "size": 0.17,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 014"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7348140332199035,
+          41.22441170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole015",
+    "type": "Pothole",
+    "size": 0.26,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 015"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7349140332199036,
+          41.22451170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole016",
+    "type": "Pothole",
+    "size": 0.23,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 016"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7350140332199037,
+          41.22461170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole017",
+    "type": "Pothole",
+    "size": 0.3,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 017"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7351140332199038,
+          41.22471170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole018",
+    "type": "Pothole",
+    "size": 0.16,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 018"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7352140332199039,
+          41.22481170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole019",
+    "type": "Pothole",
+    "size": 0.28,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 019"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.735314033219904,
+          41.22491170782136
+        ]
+      }
+    }
+  },
+  {
+    "id": "urn:ngsi-ld:pothole:pothole020",
+    "type": "Pothole",
+    "size": 0.24,
+    "description": {
+      "type": "Property",
+      "value": "Detected pothole 020"
+    },
+    "location": {
+      "type": "GeoProperty",
+      "value": {
+        "type": "Point",
+        "coordinates": [
+          1.7354140332199041,
+          41.22501170782136
         ]
       }
     }
