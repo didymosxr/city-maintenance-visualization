@@ -89,3 +89,9 @@ CB->>-Car: List of known entities at given location
 
 User-->>CB: Visualize entities via Grafana Dashboard and decide on further actions
 ```
+
+## Acknowledgement
+
+DIDYMOS-XR receives funding from the European Union's Horizon Europe research and innovation programme. 
+
+<img src="normal-reproduction-low-resolution.jpg" width="100">
