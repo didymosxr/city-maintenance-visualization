@@ -94,4 +94,4 @@ User-->>CB: Visualize entities via Grafana Dashboard and decide on further actio
 
 DIDYMOS-XR receives funding from the European Union's Horizon Europe research and innovation programme. 
 
-<img src="normal-reproduction-low-resolution.jpg" width="100"> 
+<img src="normal-reproduction-low-resolution.jpg" width="100">
