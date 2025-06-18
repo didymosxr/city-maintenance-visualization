@@ -186,7 +186,20 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "type"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 228
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 10,
@@ -205,7 +218,8 @@
           ],
           "show": false
         },
-        "showHeader": true
+        "showHeader": true,
+        "sortBy": []
       },
       "pluginVersion": "10.4.2",
       "targets": [
@@ -263,12 +277,36 @@
           {
             "hidden": false,
             "id": "entry",
-            "labelWidth": 10,
+            "labelWidth": 15,
             "section": "",
             "title": "Entry Id",
             "tooltip": "",
             "type": "string",
             "uid": "06161ded-4470-4055-8a83-53b722e24908",
+            "unit": "",
+            "value": ""
+          },
+          {
+            "hidden": false,
+            "id": "name",
+            "labelWidth": 15,
+            "section": "",
+            "title": "Field Name",
+            "tooltip": "",
+            "type": "string",
+            "uid": "c28cb92a-ef12-4cde-9187-7f544c4cc2c8",
+            "unit": "",
+            "value": ""
+          },
+          {
+            "hidden": false,
+            "id": "value",
+            "labelWidth": 15,
+            "section": "",
+            "title": "Field Value",
+            "tooltip": "",
+            "type": "string",
+            "uid": "b3b62c03-d607-41c7-ae4a-86af890694c2",
             "unit": "",
             "value": ""
           }
@@ -313,7 +351,7 @@
         },
         "sync": false,
         "update": {
-          "code": "\nconst body = {};\ncontext.panel.elements.forEach((element) => {\n  body[element.id] = element.value;\n\n});\n\nconst url = `http://localhost:3000/ngsi-ld/v1/entities/${encodeURI(body[\"entry\"])}`;\n\n/**\n* Fetch\n  */\nconst resp = fetch(url, {\n  method: \"DELETE\",\n})\n  .catch((error) => {\n    console.error(error);\n  })\n  .then((resp) => {\n    console.log(resp);\n  });",
+          "code": "\nconst body = {};\ncontext.panel.elements.forEach((element) => {\n  body[element.id] = element.value;\n\n});\n\nconst url = `http://localhost:3000/ngsi-ld/v1/entities/${encodeURI(body[\"entry\"])}/attrs`;\n\n/**\n* Fetch\n  */\nconst resp = fetch(url, {\n  method: \"PATCH\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Link\": '<http://context/ngsi-context.jsonld>; rel=\"http://www.w3.org/ns/json-ld#context\"; type=\"application/ld+json\"'\n  },\n  body: JSON.stringify({\n    [body[\"name\"]]: {\n      type: \"Property\",\n      value: body[\"value\"]\n    }\n  }),\n})\n  .catch((error) => {\n    console.error(error);\n  })\n  .then((resp) => {\n    console.log(resp);\n  });",
           "confirm": false,
           "contentType": "application/json",
           "getPayload": "const payload = {};\n\nelements.forEach((element) => {\n  if (!element.value) {\n    return;\n  }\n\n  payload[element.id] = element.value;\n})\n\nreturn payload;\n\n/**\n * Data Source payload\n */ \nreturn {\n  rawSql: '',\n  format: 'table',\n};",
@@ -323,7 +361,7 @@
         "updateEnabled": "auto"
       },
       "pluginVersion": "3.8.0",
-      "title": "Remove entry",
+      "title": "Update entry",
       "type": "volkovlabs-form-panel"
     }
   ],
