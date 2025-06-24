@@ -90,6 +90,24 @@ CB->>-Car: List of known entities at given location
 User-->>CB: Visualize entities via Grafana Dashboard and decide on further actions
 ```
 
+### Image storage
+
+Storing a File
+```
+    curl --data-binary @normal-reproduction-low-resolution.jpg -X POST http://localhost:3000/filestorage/myUnprocessedImages
+```
+return a response like
+```
+/myUnprocessedImages/0407aa5a-34e4-4558-af21-37d75fa2d941
+```
+Which can be retrieved 
+```
+ curl http://localhost:3000/filestorage/myUnprocessedImages/0407aa5a-34e4-4558-af21-37d75fa2d941 -o myFile.jpg
+```
+
+
+
+
 ## Acknowledgement
 
 DIDYMOS-XR receives funding from the European Union's Horizon Europe research and innovation programme. 

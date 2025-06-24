@@ -132,9 +132,24 @@ services:
     networks:
       - orion
       - fiware-grafana
+      - filestorage
     depends_on:
       - fiware-grafana
       - orion
+      - filestorage
+
+  filestorage:
+    image: flaviostutz/simple-file-server:1.2.1
+    ports:
+      - "4000:4000"
+    environment:
+      - LOCATION_BASE_URL=http://localhost:3000/filestorage
+      - LOG_LEVEL=debug
+      - DATA_DIR=/data
+    networks:
+      - filestorage
+    volumes:
+      - filestorage:/data
 
   fiware-grafana:
     image: grafana/grafana:latest
@@ -194,9 +209,11 @@ networks:
   orion:
   mintaka:
   fiware-grafana:
+  filestorage:
 
 volumes:
   fiware-timescale:
   fiware-mongo-config:
   fiware-mongo-data:
+  filestorage:
   
